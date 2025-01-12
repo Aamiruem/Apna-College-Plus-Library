@@ -1,83 +1,62 @@
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
 
-int minSwapsToPalindrome(string s)
+int minimumSwaps(string s)
 {
-    int n = s.length();
-    int swaps = 0;
+    int count0 = 0, count1 = 0; // Counters for '0' and '1'
+    int miss0 = 0, miss1 = 0;   // Mismatches for alternating patterns
 
-    // Check if it's possible to rearrange the string into a palindrome
-    int oddCount = 0;
-
-    vector<int> freq(26, 0);
-    for (char c : s){
-        freq[c - 'a']++;
-    }
-    for (int count : freq)
+    // Count the number of '0's and '1's in the string
+    for (int i = 0; i < s.length(); i++)
     {
-        if (count % 2 != 0)
-            oddCount++;
-    }
-    if (oddCount > 1)
-        return -1; // Not possible to rearrange into a palindrome
-
-    // Two-pointer approach to count swaps
-    int left = 0, right = n - 1;
-
-    while (left < right)
-    {
-        if (s[left] == s[right])
+        if (s[i] == '0')
         {
-            left++;
-            right--;
+            count0++;
         }
         else
         {
-            int k = right;
+            count1++;
+        }
+    }
 
-            while (k > left && s[k] != s[left])
-                k--;
+    // If the difference between counts of '0' and '1' is greater than 1, return -1
+    if (abs(count0 - count1) > 1)
+    {
+        return -1;
+    }
 
-            if (k == left)
+    // Check mismatches for alternating patterns
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (i % 2 == 0)
+        { // Even index
+            if (s[i] != '0')
             {
-                // No match found, swap adjacent
-                swap(s[left], s[left + 1]);
-                swaps++;
+                miss0++;
             }
-            else
+        }
+        else
+        { // Odd index
+            if (s[i] != '1')
             {
-                // Match found, bring it to the correct position
-                while (k < right)
-
-                {
-                    swap(s[k], s[k + 1]);
-                    swaps++;
-                    k++;
-                }
-                left++;
-                right--;
+                miss1++;
             }
         }
     }
 
-    return swaps;
+    // If counts of '0' and '1' are equal, return the minimum mismatches
+    if (count0 == count1)
+    {
+        return min(miss0, miss1);
+    }
+
+    // If counts differ, choose the pattern that matches the dominant character
+    return count0 > count1 ? miss0 : miss1;
 }
 
 int main()
 {
-    string s;
-    cin >> s;
-    int result = minSwapsToPalindrome(s);
-    if (result == -1)
-    {
-        cout << "Not possible to rearrange into a palindrome" << endl;
-    }
-    else
-    {
-        cout << result << endl;
-    }
+    string s = "00110"; // Example input string
+    cout << "Minimum number of swaps required: " << minimumSwaps(s) << endl;
     return 0;
 }
