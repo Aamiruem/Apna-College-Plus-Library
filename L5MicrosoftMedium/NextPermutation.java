@@ -1,7 +1,8 @@
 
+import java.util.Arrays;
+
 
 // Class definition for the NextPermutation algorithm
-@SuppressWarnings("unused")
 public class NextPermutation {
 
     // Method to compute the next lexicographical permutation of the array
