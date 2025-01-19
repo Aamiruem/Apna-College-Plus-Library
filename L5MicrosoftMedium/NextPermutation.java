@@ -1,7 +1,7 @@
 
-import java.util.*; // Importing the utility package for using helper classes like Arrays
 
 // Class definition for the NextPermutation algorithm
+@SuppressWarnings("unused")
 public class NextPermutation {
 
     // Method to compute the next lexicographical permutation of the array
