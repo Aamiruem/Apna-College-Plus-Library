@@ -117,7 +117,7 @@ class TreeNode {
     }
 }
 
-public class InvertedBinaryTree {
+public class InvertBinaryTreeNode {
 
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
@@ -156,7 +156,7 @@ public class InvertedBinaryTree {
         root1.right.left = new TreeNode(6);
         root1.right.right = new TreeNode(9);
 
-        InvertedBinaryTree sol = new InvertedBinaryTree();
+        InvertBinaryTree sol = new InvertBinaryTree();
 
         System.out.println("Test case 1:");
         System.out.println("Previous Tree:");
