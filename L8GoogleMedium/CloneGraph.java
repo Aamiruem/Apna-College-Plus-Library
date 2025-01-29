@@ -115,7 +115,7 @@ class Node {
 
 public class CloneGraph {
 
-    public Node cloneGraph(Node node) {
+    private Node cloneGraph(Node node) {
         if (node == null) {
             return null;
         }

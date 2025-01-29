@@ -12,7 +12,7 @@ class TreeNode {
 
 public class RootSum {
 
-    public int leafSum(TreeNode root) {
+    private int leafSum(TreeNode root) {
         return sumNodes(root, 0);
     }
 

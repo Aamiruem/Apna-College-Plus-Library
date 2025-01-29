@@ -14,7 +14,7 @@ class ListNode {
 
 public class SortList {
 
-    public ListNode sortList(ListNode head) {
+    private ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
@@ -52,12 +52,12 @@ public class SortList {
             midPrev = (midPrev == null) ? head : midPrev.next;
             head = head.next.next;
         }
-        ListNode mid = midPrev.next;
+        ListNode mid = midPrev. next;
         midPrev.next = null;
         return mid;
     }
 
-    public static void printList(ListNode head) {
+    private static void printList(ListNode head) {
         while (head != null) {
             System.out.print(head.val + " -> ");
             head = head.next;
