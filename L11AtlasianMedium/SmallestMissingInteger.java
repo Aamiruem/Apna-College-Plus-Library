@@ -29,6 +29,6 @@ public class SmallestMissingInteger {
             }
         }
 
-        System.out.println(ans);
+        System.out.println("Smallest missing integer: " + ans);
     }
 }
