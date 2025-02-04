@@ -38,6 +38,7 @@ public class InvertBinaryTrees {
         if (root == null) {
             return;
         }
+        @SuppressWarnings("Convert2Diamond")
         Queue<TreeNode> q = new LinkedList<TreeNode>();
         q.offer(root);
         while (!q.isEmpty()) {
