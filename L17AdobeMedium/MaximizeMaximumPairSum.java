@@ -41,17 +41,7 @@
 
 import java.util.Arrays;
 
-public class Main {
 
-    public static void main(String[] args) { // Fixed Stringll to String[]
-        MaximizeMaximumPairSum solution = new MaximizeMaximumPairSum();
-        int[] nums = {3, 5, 2, 7, 1, 6, 4}; // Fixed array initialization
-
-        int minPairSum = solution.minPairSum(nums); // Fixed function call syntax
-
-        System.out.println("Minimum Pair Sum: " + minPairSum); // Fixed syntax
-    }
-}
 
 public class MaximizeMaximumPairSum {
 
@@ -64,5 +54,14 @@ public class MaximizeMaximumPairSum {
         }
 
         return ans; // Fixed missing semicolon
+    }
+
+    public static void main(String[] args) { // Fixed Stringll to String[]
+        MaximizeMaximumPairSum solution = new MaximizeMaximumPairSum();
+        int[] nums = {3, 5, 2, 7, 1, 6, 4}; // Fixed array initialization
+
+        int minPairSum = solution.minPairSum(nums); // Fixed function call syntax
+
+        System.out.println("Minimum Pair Sum: " + minPairSum); // Fixed syntax
     }
 }
