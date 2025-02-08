@@ -31,24 +31,23 @@ public class StringCanBreakOtherString {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
         // User input
-        System.out.print("Enter first string: ");
-        String s1 = scanner.nextLine();
-        System.out.print("Enter second string: ");
-        String s2 = scanner.nextLine();
-
-        // Check if one string can break another
-        boolean result = checkIfCanBreak(s1, s2);
-
-        // Output result
-        if (result) {
-            System.out.println("One string can break the other.");
-        } else {
-            System.out.println("Neither string can break the other.");
+        try (Scanner scanner = new Scanner(System.in)) {
+            // User input
+            System.out.print("Enter first string: ");
+            String s1 = scanner.nextLine();
+            System.out.print("Enter second string: ");
+            String s2 = scanner.nextLine();
+            
+            // Check if one string can break another
+            boolean result = checkIfCanBreak(s1, s2);
+            
+            // Output result
+            if (result) {
+                System.out.println("One string can break the other.");
+            } else {
+                System.out.println("Neither string can break the other.");
+            }
         }
-
-        scanner.close();
     }
 }
